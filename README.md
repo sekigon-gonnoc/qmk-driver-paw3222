@@ -15,8 +15,19 @@ This module provides QMK support for the PAW3222 optical sensor, commonly used i
 
 2. Add the following to your `rules.mk`:
    ```
+   POINTING_DEVICE_DRIVER = custom
    SRC += paw3222.c
    ```
+
+3. Enable pointing device in `keyboard.json`:
+
+```json
+{
+    "features": {
+        "pointing_device": true
+    }
+}
+```
 
 ## Pin Configuration
 
@@ -32,24 +43,6 @@ You must define the following pins in your `config.h`:
 #define POINTING_DEVICE_SCLK_PIN B0
 #define POINTING_DEVICE_SDIO_PIN B1
 #define POINTING_DEVICE_CS_PIN   B2
-```
-
-## Usage
-
-1. Enable pointing device in `keyboard.json`:
-
-```json
-{
-    "features": {
-        "pointing_device": true
-    }
-}
-```
-
-2. Add the PAW3222 driver to your pointing device configuration in `config.h`:
-
-```c
-#define POINTING_DEVICE_DRIVER paw3222_pointing_device_driver
 ```
 
 ## Credits
@@ -80,8 +73,19 @@ This driver is released under the GPL-2.0 license, as per QMK's licensing.
 
 2. `rules.mk`ファイルに以下を追加します：
    ```
+   POINTING_DEVICE_DRIVER = custom
    SRC += paw3222.c
    ```
+
+3. `keyboard.json`でポインティングデバイスを有効にします：
+
+```json
+{
+    "features": {
+        "pointing_device": true
+    }
+}
+```
 
 ## ピン設定
 
@@ -97,24 +101,6 @@ This driver is released under the GPL-2.0 license, as per QMK's licensing.
 #define POINTING_DEVICE_SCLK_PIN B0
 #define POINTING_DEVICE_SDIO_PIN B1
 #define POINTING_DEVICE_CS_PIN   B2
-```
-
-## 使用方法
-
-1. `keyboard.json`でポインティングデバイスを有効にします：
-
-```json
-{
-    "features": {
-        "pointing_device": true
-    }
-}
-```
-
-2. `config.h`にPAW3222ドライバーを設定します：
-
-```c
-#define POINTING_DEVICE_DRIVER paw3222_pointing_device_driver
 ```
 
 ## クレジット
